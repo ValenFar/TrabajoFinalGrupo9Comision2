@@ -1,0 +1,12 @@
+.bg-app {
+  min-height: 100vh;
+  background-image: url("../assets/FondoARG.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.bg-NavBar{
+  background-color: rgba(167, 171, 176, 0.637);
+}
