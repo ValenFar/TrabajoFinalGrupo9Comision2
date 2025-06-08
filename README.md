@@ -1,12 +1,14 @@
-# React + Vite
+## Trabajo Final Integrador
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Grupo 9 Comision 2
 
-Currently, two official plugins are available:
+## Alumnos
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Maximo Valentin Farfan Antileo ♾️ GitHub user ➡️ [@ValenFar](https://www.github.com/ValenFar)
 
-## Expanding the ESLint configuration
+- Elias Ruben Tolaba ♾️ GitHub user ➡️ [@ElirUu](https://www.github.com/ElirUu)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Marino Jorge Luis ♾️ GitHub user ➡️ [@MarinoJorgeLuis](https://www.github.com/MarinoJorgeLuis)
+
+- Lucas Joaquin Zerpa Patagua ♾️ GitHub user ➡️ [@Lucaz991](https://www.github.com/Lucaz991)
+  ![Logo](https://www.fi.unju.edu.ar/images/Institucional/Logos/logo-fi-unju-institucional-horizontal-786x202.png)

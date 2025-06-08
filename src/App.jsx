@@ -1,35 +1,34 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "./css/App.css";
+import AppRouter from "./router/Router";
+import NavBar2 from "./layouts/Navbar2";
+import { Container, Row, Col } from "react-bootstrap";
+import Footer from "./layouts/Footer";
+
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    
+    <Container
+      fluid
+      className="bg-app min-vh-100 d-flex flex-column"
+    >
+      <Row className="flex-grow-1 d-flex justify-content-center align-items-center">
+        <Col xs={12} md={11} lg={10} xl={10} xxl={9}>
+          <div
+            className="bg-white rounded shadow p-3"
+            style={{ minHeight: "90vh" }}
+          >
+            <NavBar2 />
+            <AppRouter />
+            
+            
+      <Footer/>
+          </div>
+        </Col>
+      </Row>
+    </Container>
+
+  );
 }
 
-export default App
+export default App;
