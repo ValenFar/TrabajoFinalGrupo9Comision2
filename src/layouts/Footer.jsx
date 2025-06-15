@@ -10,7 +10,7 @@ const Footer = () => {
             <p className="mb-0">© 2025 Grupo 9 Trabajo Integrador.</p>
           </Col>
           <Col md={6} className="text-md-end">
-            <Link to="/" className="text-white text-decoration-none me-3"> 
+            <Link to="Nosotros" className="text-white text-decoration-none me-3"> 
               Nosotros 
             </Link>
             <Link to="/" className="text-white text-decoration-none">
