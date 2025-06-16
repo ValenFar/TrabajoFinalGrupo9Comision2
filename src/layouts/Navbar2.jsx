@@ -1,10 +1,16 @@
 import { Link, NavLink } from "react-router-dom";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
-import Container from "react-bootstrap/Container";
+import { Container, Button } from "react-bootstrap";
 import "../css/App.css";
 
+import useAuth from '../hooks/useAuth';
+import { FaUser } from "react-icons/fa";
+import { IoLogOut } from "react-icons/io5";
+
 const NavBar2 = () => {
+  const { isAuthenticated, logout } = useAuth();
+  
   return (
     <Navbar className="navbar navbar-expand-lg bg-NavBar rounded">
       <Container className="container-fluid fs-5 ">
@@ -28,13 +34,37 @@ const NavBar2 = () => {
             <Nav.Link as={NavLink} to="/Productos">
               Productos
             </Nav.Link>
-            <Nav.Link as={NavLink} to="/Favoritos">
-              Mis Favoritos
-            </Nav.Link>
-            <Nav.Link as={NavLink} to="/Editar">
-              Edicion
-            </Nav.Link>
+            {
+            isAuthenticated &&
+            (<>
+              <Nav.Link as={NavLink} to="/Favoritos">
+                Mis Favoritos
+              </Nav.Link>
+              <Nav.Link as={NavLink} to="/Editar">
+                Edicion
+              </Nav.Link></>
+            )}
           </Nav>
+
+
+          {
+            isAuthenticated ? (
+              <Nav.Link as={NavLink} to="/">
+                <Button variant="danger" onClick={logout}>
+                  Cerrar Sesión
+                  <IoLogOut style={{width: '30px', padding: '0px' ,paddingLeft: '7px', height: 'fit-content'}} />
+                </Button>
+              </Nav.Link>
+            )
+            :
+            <Nav.Link as={NavLink} to="/Login">
+              <Button variant="dark">
+                <FaUser style={{width: '20px', paddingRight: '7px'}} />
+                Iniciar Sesión
+              </Button>
+            </Nav.Link>
+          }
+
         </Navbar.Collapse>
       </Container>
     </Navbar>
