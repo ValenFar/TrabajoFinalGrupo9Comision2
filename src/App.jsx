@@ -4,6 +4,8 @@ import NavBar2 from "./layouts/Navbar2";
 import { Container, Row, Col } from "react-bootstrap";
 import Footer from "./layouts/Footer";
 import useFetchProducts from "./hooks/useFetchProducts";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Error from "./pages/Error";
 
 function App() {
   return (

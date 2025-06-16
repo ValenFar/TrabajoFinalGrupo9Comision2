@@ -21,15 +21,24 @@ const Nosotros = () => {
             alt="Logo Grupo 9"
             fluid
             rounded
+            className="animate__animated animate__pulse animate__infinite"
             style={{ maxHeight: '200px' }}
         />
     </div>
 
     <p className="text-center mx-auto" style={{ maxWidth: '700px' }}>
-        Somos un equipo de 4 estudiantes, todos comprometidos con el desarrollo web y el
-        aprendizaje colaborativo. Este proyecto fue desarrollado en el marco de
-        la materia <strong>Programación Visual</strong>, en donde aplicamos
-        nuestras habilidades en diseño, programación visual, lógica y código.
+        Somos un equipo de estudiantes apasionados por la tecnología, la programación y el trabajo colaborativo.
+        Este proyecto fue desarrollado como parte de la materia <strong>Programación Visual</strong>, donde
+        pusimos en práctica nuestras habilidades en diseño de interfaces, desarrollo de componentes y gestión de estados.
+        Cada integrante aportó sus conocimientos y compromiso para construir una aplicación funcional, accesible y bien estructurada.
+    </p>
+    <p className="text-center mt-4">
+        Agradecemos especialmente al <strong>Profesor Ariel Vega</strong> por brindarnos los fundamentos teóricos,
+        y al <strong>Profesor Gustavo Sosa</strong> por guiarnos en la aplicación práctica de los contenidos. 
+        Su acompañamiento fue clave para lograr este proyecto.
+    </p>
+    <p className="text-muted text-center fst-italic">
+        <strong>"El mejor código es el que se hace en equipo."</strong>
     </p>
 
     <h3 className="text-center my-4 fw-bold fs-1">
@@ -39,7 +48,7 @@ const Nosotros = () => {
     <Row xs={1} md={2} lg={4} className="g-4">
         {/* Valentín Farfán */}
         <Col>
-            <Card className="text-center h-100 shadow-sm border-0 transition-hover">
+            <Card className="text-center h-100 shadow-sm border-0 animate__animated animate__fadeInUp">
                 <Card.Body className="d-flex flex-column justify-content-between">
                 <div>
                     <Card.Title>Valentín Farfán</Card.Title>
@@ -68,7 +77,7 @@ const Nosotros = () => {
 
         {/* Jorge Marino */}
         <Col>
-            <Card className="text-center h-100 shadow-sm border-0 transition-hover">
+            <Card className="text-center h-100 shadow-sm border-0 animate__animated animate__fadeInUp">
                 <Card.Body className="d-flex flex-column justify-content-between">
                 <div>
                     <Card.Title>Jorge Marino</Card.Title>
@@ -97,7 +106,7 @@ const Nosotros = () => {
 
         {/* Elías Tolaba */}
         <Col>
-            <Card className="text-center h-100 shadow-sm border-0 transition-hover">
+            <Card className="text-center h-100 shadow-sm border-0 animate__animated animate__fadeInUp">
                 <Card.Body className="d-flex flex-column justify-content-between">
             <div>
                 <Card.Title>Elías Tolaba</Card.Title>
@@ -126,7 +135,7 @@ const Nosotros = () => {
 
         {/* Lucas Zerpa */}
         <Col>
-            <Card className="text-center h-100 shadow-sm border-0 transition-hover">
+            <Card className="text-center h-100 shadow-sm border-0 animate__animated animate__fadeInUp">
                 <Card.Body className="d-flex flex-column justify-content-between">
                 <div>
                     <Card.Title>Lucas Zerpa</Card.Title>
