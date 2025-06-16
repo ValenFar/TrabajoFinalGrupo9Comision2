@@ -35,7 +35,7 @@ const Nosotros = () => {
     <p className="text-center mt-4">
         Agradecemos especialmente al <strong>Profesor Ariel Vega</strong> por brindarnos los fundamentos teóricos,
         y al <strong>Profesor Gustavo Sosa</strong> por guiarnos en la aplicación práctica de los contenidos. 
-        Su acompañamiento fue clave para lograr este proyecto.
+        El acompañamiento de ambos fue clave para lograr este proyecto.
     </p>
     <p className="text-muted text-center fst-italic">
         <strong>"El mejor código es el que se hace en equipo."</strong>
