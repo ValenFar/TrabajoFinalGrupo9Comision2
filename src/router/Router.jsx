@@ -4,6 +4,9 @@ import Productos from "../pages/Productos";
 import ProducDetalles from "../pages/ProducDetalles";
 import ProducFavs from "../pages/ProducFavs";
 import Editar from "../pages/Editar";
+import Nosotros from "../pages/Nosotros";
+import Error from "../pages/Error";
+
 const AppRouter = () => {
   return(
     <div className="router">
@@ -13,6 +16,9 @@ const AppRouter = () => {
         <Route path="/Detalles" element={<ProducDetalles />}/>
         <Route path="/Favoritos" element={<ProducFavs />}/>
         <Route path="/Editar" element={<Editar />}/>
+        <Route path="/Nosotros" element={<Nosotros />} />
+
+        <Route path="*" element={<Error />} />
       </Routes>
 
     </div>

@@ -11,4 +11,5 @@ Grupo 9 Comision 2
 - Marino Jorge Luis ♾️ GitHub user ➡️ [@MarinoJorgeLuis](https://www.github.com/MarinoJorgeLuis)
 
 - Lucas Joaquin Zerpa Patagua ♾️ GitHub user ➡️ [@Lucaz991](https://www.github.com/Lucaz991)
+
   ![Logo](https://www.fi.unju.edu.ar/images/Institucional/Logos/logo-fi-unju-institucional-horizontal-786x202.png)
