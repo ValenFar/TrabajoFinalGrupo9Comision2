@@ -6,6 +6,7 @@ import {
     Button,
     Image
 } from "react-bootstrap";
+import iconG9 from "../assets/images/iconG9.png";
 
 const Nosotros = () => {
     return (
@@ -13,11 +14,22 @@ const Nosotros = () => {
             <h1 className="text-center mb-4 text-decoration-underline">
                 Sobre nosotros
             </h1>
+
+            <div className="text-center mb-4">
+                <Image
+                    src="/ShoppiNineLogo.png"
+                    alt="Logo ShoppiNine"
+                    fluid
+                    className="animate__animated animate__zoomIn animate__slow"
+                    style={{ maxHeight: "300px" }}
+                />
+            </div>
+
             <h2 className="text-center fs-1">Somos el GRUPO 9</h2>
 
     <div className="text-center my-3">
         <Image
-            src="/iconG9.png"
+            src={iconG9}
             alt="Logo Grupo 9"
             fluid
             rounded
