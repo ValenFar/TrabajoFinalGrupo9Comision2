@@ -1,4 +1,3 @@
-import Badge from 'react-bootstrap/Badge';
 const style_text = {
     display: 'unset',
     alignItems: 'center',

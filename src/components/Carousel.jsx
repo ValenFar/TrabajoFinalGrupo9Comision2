@@ -6,7 +6,7 @@ import Col from 'react-bootstrap/esm/Col';
 import Row from 'react-bootstrap/esm/Row';
 
 //Use context
-import { ProductsContext } from '../../contexts/productsContext.js';
+import { ProductsContext } from '../context/productsContext.js';
 import { useContext } from 'react';
 import Etiqueta from './Etiqueta.jsx';
 

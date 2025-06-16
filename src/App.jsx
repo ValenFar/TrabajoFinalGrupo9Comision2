@@ -1,18 +1,24 @@
 import "./css/App.css";
+import { useState, useEffect } from "react";
 import AppRouter from "./router/Router";
 import NavBar2 from "./layouts/Navbar2";
 import { Container, Row, Col } from "react-bootstrap";
 import Footer from "./layouts/Footer";
 
 //Contexto global
-import { ProductsContext } from "./contexts/productsContext";
+import { ProductsContext } from "./context/productsContext";
 //data
 import { products } from './data/products.js';
 
 function App() {
+  const [items, setItems] = useState(products);
+    useEffect(() => {
+    setItems(products.sort(() => 0.5 - Math.random())) //Devuelve 3 productos aleatorios
+  }, [products]);
+  
   return (
     
-    <ProductsContext.Provider value={products}>
+    <ProductsContext.Provider value={items}>
       <Container
         fluid
         className="bg-app min-vh-100 d-flex flex-column"
@@ -25,9 +31,7 @@ function App() {
             >
               <NavBar2 />
               <AppRouter />
-              
-              
-        <Footer/>
+              <Footer/>
             </div>
           </Col>
         </Row>

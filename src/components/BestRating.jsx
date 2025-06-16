@@ -5,28 +5,34 @@ import Button from 'react-bootstrap/esm/Button';
 import Row from 'react-bootstrap/Row';
 import Stack from 'react-bootstrap/esm/Stack';
 
-
-
-
 //Use context
-import { ProductsContext } from '../../contexts/productsContext.js';
+//import { ProductsContext } from '../context/productsContext.js';
 import { useContext } from 'react';
 import Etiqueta from './Etiqueta.jsx';
 
+import { useNavigate } from 'react-router-dom';
+import useAuth from '../hooks/useAuth';
 
 
+import { useFavs } from "../context/FavsContext";
+import { useProductContext } from "../context/ProductContext";
+import { FaHeart, FaRegHeart } from "react-icons/fa";
 
 export default function BestRating({ categoria }) {
-  const products  = useContext(ProductsContext);
+  const { isAuthenticated } = useAuth();
+  //const products  = useContext(ProductsContext);
+  const { productData } = useProductContext();
   //Operaciones para obtener todos los productos de una determinada categoria y ordenarlos por su rating. El resultado final es un array con 4 objetos en su interior
-  let productCategory = products.filter(producto => producto.category === categoria);
+  let productCategory = productData.filter(producto => producto.category === categoria);
   productCategory.sort((a, b) => b.rating.rate - a.rating.rate);
   let productsCutted = productCategory.slice(0, 4);
-
+  
+  const { toggleFavorito, isFavorito } = useFavs();
+  const navigate = useNavigate();
 
   return (
     <>
-    <Stack gap={2} className="col-md-5 mx-auto">
+    <Stack gap={2} className="col-md-5 mx-auto dg">
       <h1 style={{marginTop: '10rem', marginBottom: '2rem', textTransform: 'uppercase'}}>
         Lo más popular de 
         <strong style={{
@@ -52,16 +58,29 @@ export default function BestRating({ categoria }) {
               </Col>
               <Col xs={6} >
                 <Card.Body>
+                  
                   <Card.Title style={{marginBottom: '1rem'}}><strong>{p.title}</strong></Card.Title>
                   <Card.Text>
                     {p.description.length > 200 ? p.description.slice(0, 200) + '...' : p.description}
                   </Card.Text>
-                  <Etiqueta>
-                    <img src="../../../public/star-icon.svg" alt="favorite"  style={ style_icon }/>
-                    {p.rating.rate}
-                  </Etiqueta>
-                  <Button variant="primary" style={{margin: '0.5rem'}}>Details</Button>
-                  <Button variant="secondary" >Add to Cart</Button>
+                  <div style={{ display: 'flex', flexDirection: 'row' }}>
+                    <Etiqueta>
+                      <img src="../../../public/star-icon.svg" alt="favorite"  style={ style_icon }/>
+                      {p.rating.rate}
+                    </Etiqueta>
+                    (<aside>{p.rating.count}</aside>)
+                    <Button variant="primary" style={{marginLeft: '20px', marginRight: '10px'}}>Details</Button>
+                    {
+                      isAuthenticated ? 
+                      <Button variant={isFavorito(p.id) ? "danger" : "outline-danger"} onClick={() => toggleFavorito(p)}>
+                        { isFavorito(p.id) ? <FaHeart /> : <FaRegHeart />}
+                      </Button>
+                      :
+                      <Button variant="outline-danger" onClick={()=> navigate('/login')}>
+                        <FaHeart />
+                      </Button>
+                    }
+                  </div>
                 </Card.Body>
               </Col>
             </Row>
