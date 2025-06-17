@@ -9,7 +9,7 @@ import { FavsProvider } from "./context/FavsContext.jsx";
 import { AuthProvider } from "./context/AuthContext.jsx";
 
 createRoot(document.getElementById("root")).render(
-  <StrictMode>
+  
     <AuthProvider>
       <BrowserRouter>
         <ProductProvider>
@@ -19,5 +19,5 @@ createRoot(document.getElementById("root")).render(
         </ProductProvider>
       </BrowserRouter>
     </AuthProvider>
-  </StrictMode>
-);
+  
+)
