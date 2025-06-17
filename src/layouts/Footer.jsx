@@ -13,9 +13,6 @@ const Footer = () => {
             <Link to="Nosotros" className="text-white text-decoration-none me-3"> 
               Nosotros 
             </Link>
-            <Link to="/" className="text-white text-decoration-none">
-              Contacto
-            </Link>
           </Col>
         </Row>
       </Container>

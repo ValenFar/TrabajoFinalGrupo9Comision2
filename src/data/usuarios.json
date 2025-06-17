@@ -1,13 +1,8 @@
 [
     {
-        "id": "user1",
-        "username": "user1",
+        "id": "Admin",
+        "username": "Admin",
         "password": "123",
-        "rol": "USUARIO COMUN"
-    },{
-        "id": "user2",
-        "username": "user2",
-        "password": "345",
-        "rol": "USUARIO COMUN2"
+        "rol": "Admin"
     }
 ]

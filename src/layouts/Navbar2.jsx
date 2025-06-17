@@ -34,6 +34,7 @@ const NavBar2 = () => {
             <Nav.Link as={NavLink} to="/Productos">
               Productos
             </Nav.Link>
+            
             {
             isAuthenticated &&
             (<>
@@ -44,6 +45,9 @@ const NavBar2 = () => {
                 Edicion
               </Nav.Link></>
             )}
+            <Nav.Link as={NavLink} to="/Nosotros">
+              Nosotros
+            </Nav.Link>
           </Nav>
 
 
