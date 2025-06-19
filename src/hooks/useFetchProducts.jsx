@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 const useFetchProducts = () => {
   const [productData, setProductData] = useState([]); // estado para guardar los productos
 
-  const BASE_URL = "https://fakestoreapi.com/products"; // url no modificable (sin barra al final)
+  const BASE_URL = "https://fakestoreapi.com/products"; // url no modificable
 
   useEffect(() => {
     // hook que se ejecuta al montar el componente

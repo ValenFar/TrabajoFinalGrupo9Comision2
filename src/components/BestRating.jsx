@@ -12,10 +12,10 @@ import { useNavigate } from 'react-router-dom';
 import useAuth from '../hooks/useAuth';
 
 
-import { useFavs } from "../context/FavsContext";
-import { useProductContext } from "../context/ProductContext";
+import useFavs from "../hooks/useFavs";
 import { FaHeart, FaRegHeart } from "react-icons/fa";
 import ModalPers from './ModalPers';
+import useProductContext from '../hooks/useProductContext';
 
 export default function BestRating({ categoria }) {
   const { isAuthenticated } = useAuth();
@@ -25,9 +25,9 @@ if (!Array.isArray(products)) {
   return <p>Cargando productos...</p>;
 }
   
-let productCategory = products.filter(producto => producto.category === categoria);
+const productCategory = products.filter(producto => producto.category === categoria);
 productCategory.sort((a, b) => b.rating.rate - a.rating.rate);
-let productsCutted = productCategory.slice(0, 4);
+const productsCutted = productCategory.slice(0, 4);
   
   const { toggleFavorito, isFavorito } = useFavs();
   const navigate = useNavigate();

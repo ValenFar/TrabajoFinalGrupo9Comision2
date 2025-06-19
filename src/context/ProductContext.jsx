@@ -1,7 +1,7 @@
 import { createContext, useContext, useState, useEffect } from "react";
 import useFetchProducts from "../hooks/useFetchProducts";
 
-const ProductContext = createContext();
+export const ProductContext = createContext();
 
 export const ProductProvider = ({ children }) => {
   const fetchedProducts = useFetchProducts();
@@ -46,4 +46,3 @@ export const ProductProvider = ({ children }) => {
   );
 };
 
-export const useProductContext = () => useContext(ProductContext);
