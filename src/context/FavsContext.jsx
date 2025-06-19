@@ -1,14 +1,16 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
+import useProductContext from "../hooks/useProductContext";
 
-// 1. Crear contexto
-const FavsContext = createContext();
+// contexto
+export const FavsContext = createContext();
 
-// 2. Hook personalizado para usar el contexto
-export const useFavs = () => useContext(FavsContext);
+// hook personalizado para usar el contexto
+// export const useFavs = () => useContext(FavsContext);
 
-// 3. Provider
+// Provider
 export const FavsProvider = ({ children }) => {
   const [favoritos, setFavoritos] = useState([]);
+  const {products} = useProductContext(); // trae los productos actuales
 
   const toggleFavorito = (producto) => {
   setFavoritos((prev) =>
@@ -20,6 +22,15 @@ export const FavsProvider = ({ children }) => {
 
 
   const isFavorito = (id) => favoritos.some((item) => item.id === id);
+
+  useEffect(() =>{ // sincroniza los cambios de productContext
+    setFavoritos((prevFavs) =>
+    prevFavs
+      .map((fav) => products.find((p) => p.id === fav.id) || null) // actualiza datos
+      .filter(Boolean) // elimina los que ya no existen (null / undefined)
+    )
+    console.log("cambiaron los productos")
+  },[products]) // cada vez que hay cambios en productos
 
   return (
     <FavsContext.Provider value={{ favoritos, toggleFavorito, isFavorito }}>

@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import ProductCard from "../components/ProductCard";
 import { Container, Col, Row } from "react-bootstrap";
-import { useProductContext } from "../context/ProductContext";
+import useProductContext from '../hooks/useProductContext';
 
 const Productos = () => {
   const { products } = useProductContext();

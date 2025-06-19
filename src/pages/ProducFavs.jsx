@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { useFavs } from "../context/FavsContext";
+import useFavs from "../hooks/useFavs";
 import ProductCard from "../components/ProductCard";
 import { Container, Row, Col } from "react-bootstrap";
 
@@ -21,7 +21,7 @@ const ProducFavs = () => {
         ) : (
           <Row>
             {favoritos.map((product) => (
-              <Col md={4} key={product.id} className="mb-4">
+              <Col key={product.id} className="mb-4" xs={12} sm={6} md={4} lg={3}>
                 <ProductCard productData={product} />
               </Col>
             ))}

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useProductContext } from "../context/ProductContext";
+import useProductContext from "../hooks/useProductContext";
 import { Container, Row, Col, Card, Button, Form } from "react-bootstrap";
 
 const initialForm = {
@@ -22,11 +22,11 @@ const Edicion = () => {
   };
 
   const handleAdd = () => {
-    if (!form.title || !form.price) return;
+    if (!form.title || !form.price) return; // validacion basica
     addProduct({
       ...form,
-      id: Date.now(),
-      price: parseFloat(form.price),
+      id: Date.now(), // genera un id con la fecha actual
+      price: parseFloat(form.price), // convierte a nro decimal
     });
     setForm(initialForm);
   };

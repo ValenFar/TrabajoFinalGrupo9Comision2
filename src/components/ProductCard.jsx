@@ -2,14 +2,13 @@ import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import Modal from "react-bootstrap/Modal";
-import { useFavs } from "../context/FavsContext";
+import useFavs from "../hooks/useFavs";
 import { FaHeart, FaRegHeart } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import useAuth from "../hooks/useAuth"; 
 import ModalPers from "./ModalPers";
 
 const ProductCard = ({ productData }) => {
-  const [modalShow, setModalShow] = useState(false);
   const { toggleFavorito, isFavorito } = useFavs();
   const navigate = useNavigate();
   const { isAuthenticated } = useAuth(); // estado de auth
