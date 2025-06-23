@@ -1,5 +1,6 @@
 .bg-app {
   min-height: 100vh;
+  min-width: 450px;
   background-image: url("../assets/images/FondoARG.jpg");
   background-size: cover;
   background-position: center;

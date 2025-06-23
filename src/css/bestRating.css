@@ -1,0 +1,30 @@
+.best-rating-shape {
+  background: rgb(215, 3, 247);
+  color: white;
+  padding: 0.5rem;
+  display: inline-block;
+  transform: skew(-15deg);
+  border-radius: 6px;
+  margin-left: 0.5rem;
+}
+
+.best-rating-product-count, .best-rating-title-h1 {
+    text-shadow: 0 3px 4px rgba(0,0,0,0.6);
+}
+
+.best-rating-title-h1 {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+}
+
+.best-rating-img-cover {
+    object-fit: contain;
+    max-height: 300px;
+}
+
+.best-rating-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 0.3rem;
+}
