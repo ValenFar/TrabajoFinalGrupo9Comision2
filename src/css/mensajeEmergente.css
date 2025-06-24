@@ -1,0 +1,15 @@
+.mensaje-emergente {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  background: #fff;
+  padding: 16px 32px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  min-width: auto;
+  text-align: center;
+  opacity: 2;
+  transition: opacity 1s ease;
+}

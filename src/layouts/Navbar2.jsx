@@ -7,12 +7,13 @@ import "../css/App.css";
 import useAuth from '../hooks/useAuth';
 import { FaUser } from "react-icons/fa";
 import { IoLogOut } from "react-icons/io5";
+import Overlay from '../components/Overlay.jsx'
 
 const NavBar2 = () => {
-  const { isAuthenticated, logout } = useAuth();
+  const { isAuthenticated, logout, user } = useAuth();
   
   return (
-    <Navbar className="navbar navbar-expand-lg bg-NavBar rounded">
+    <Navbar expand="md" className="navbar navbar-expand-lg bg-NavBar rounded" >
       <Container className="container-fluid fs-5 ">
         <Navbar.Brand as={Link} to="/" className="d-flex align-items-center">
           <img
@@ -21,9 +22,9 @@ const NavBar2 = () => {
             width="80"
             height="80"
             className="d-inline-block align-top me-2"
-    />
+          />
           ShoppiNine
-</Navbar.Brand>
+        </Navbar.Brand>
 
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -37,13 +38,17 @@ const NavBar2 = () => {
             
             {
             isAuthenticated &&
-            (<>
+            (
               <Nav.Link as={NavLink} to="/Favoritos">
                 Mis Favoritos
               </Nav.Link>
+            )}
+            {
+            isAuthenticated && user.rol === "Admin" &&
+            (
               <Nav.Link as={NavLink} to="/Editar">
                 Edicion
-              </Nav.Link></>
+              </Nav.Link>
             )}
             <Nav.Link as={NavLink} to="/Nosotros">
               Nosotros
@@ -54,10 +59,12 @@ const NavBar2 = () => {
           {
             isAuthenticated ? (
               <Nav.Link as={NavLink} to="/">
-                <Button variant="danger" onClick={logout}>
-                  Cerrar Sesión
-                  <IoLogOut style={{width: '30px', padding: '0px' ,paddingLeft: '7px', height: 'fit-content'}} />
-                </Button>
+                <Overlay mensaje="Salir de la cuenta" direction="top" >
+                  <Button variant="danger" onClick={logout}>
+                    <strong>{user.username}</strong>
+                    <IoLogOut style={{width: '30px', padding: '0px' ,paddingLeft: '7px', height: 'fit-content'}} />
+                  </Button>
+                </Overlay>
               </Nav.Link>
             )
             :
@@ -76,3 +83,4 @@ const NavBar2 = () => {
 };
 
 export default NavBar2;
+
