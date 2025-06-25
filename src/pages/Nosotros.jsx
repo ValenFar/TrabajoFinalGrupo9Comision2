@@ -1,5 +1,6 @@
-import { Container, Row, Col, Card, Button, Image } from "react-bootstrap";
+import { Container, Row, Image } from "react-bootstrap";
 import iconG9 from "../assets/images/iconG9.png";
+import NosotrosCard from "../components/NosotrosCard";
 
 const Nosotros = () => {
   return (
@@ -51,22 +52,22 @@ const Nosotros = () => {
       </h3>
 
       <Row xs={1} md={2} lg={4} className="g-4">
-        <CardIntegrante
+        <NosotrosCard
           nombre="Valentín Farfán"
           git="https://github.com/ValenFar"
           correo="mailto:maxy.far@gmail.com"
         />
-        <CardIntegrante
+        <NosotrosCard
           nombre="Jorge Marino"
           git="https://www.github.com/MarinoJorgeLuis"
           correo="mailto:mjorgeluis785@gmail.com"
         />
-        <CardIntegrante
+        <NosotrosCard
           nombre="Elías Tolaba"
           git="https://www.github.com/ElirUu"
           correo="mailto:mailto:eliastoladm@gmail.com"
         />
-        <CardIntegrante
+        <NosotrosCard
           nombre="Lucas Zerpa"
           git="https://www.github.com/Lucaz991"
           correo="mailto:lenkagamine268@gmail.com"
