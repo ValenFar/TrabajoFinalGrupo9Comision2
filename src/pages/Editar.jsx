@@ -72,6 +72,7 @@ const Edicion = () => {
               value={form.title}
               onChange={handleChange}
               className="mb-2"
+              required
             />
           </Col>
           <Col md={2}>
@@ -82,6 +83,7 @@ const Edicion = () => {
               value={form.price}
               onChange={handleChange}
               className="mb-2"
+              required
             />
           </Col>
           <Col md={3}>
@@ -92,6 +94,7 @@ const Edicion = () => {
               value={form.category}
               onChange={handleChange}
               className="mb-2"
+              required
             />
           </Col>
           <Col md={3}>
@@ -102,6 +105,7 @@ const Edicion = () => {
               value={form.image}
               onChange={handleChange}
               className="mb-2"
+              required
             />
           </Col>
         </Row>
@@ -115,6 +119,7 @@ const Edicion = () => {
               value={form.description}
               onChange={handleChange}
               className="mb-2"
+              required
             />
           </Col>
         </Row>

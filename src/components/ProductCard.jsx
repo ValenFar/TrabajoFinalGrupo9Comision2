@@ -1,19 +1,31 @@
-import React, { useState } from "react";
-import Button from "react-bootstrap/Button";
+import { useEffect, useState } from "react";
 import Card from "react-bootstrap/Card";
-import Modal from "react-bootstrap/Modal";
-import useFavs from "../hooks/useFavs";
-import { FaHeart, FaRegHeart } from "react-icons/fa";
-import { useNavigate } from "react-router-dom";
-import useAuth from "../hooks/useAuth"; 
 import ModalPers from "./ModalPers";
+import LikeButton from "./LikeButton.jsx";
 
 const ProductCard = ({ productData }) => {
-  const { toggleFavorito, isFavorito } = useFavs();
-  const navigate = useNavigate();
-  const { isAuthenticated } = useAuth(); // estado de auth
 
   if (!productData) return <p>Cargando...</p>;
+
+  const [mensajeEmergente, setMensajeEmergente] = useState({
+    show: false,
+    mensaje: "",
+  });
+  useEffect(() => {
+    let timer;
+    if (mensajeEmergente.show) {
+      timer = setTimeout(
+        () =>
+          setMensajeEmergente({
+            ...mensajeEmergente,
+            show: false,
+            mensaje: "",
+          }),
+        2000
+      );
+    }
+    return () => clearTimeout(timer);
+  }, [mensajeEmergente]);
 
   return (
     <>
@@ -23,7 +35,6 @@ const ProductCard = ({ productData }) => {
           height: "100%",
           display: "flex",
           flexDirection: "column",
-          
         }}
       >
         <Card.Img
@@ -35,32 +46,19 @@ const ProductCard = ({ productData }) => {
         />
 
         <Card.Body className="d-flex flex-column flex-grow-1 ">
-          <Card.Title style={{ fontSize: "19px" }}>{productData.title}</Card.Title>
+          <Card.Title style={{ fontSize: "19px" }}>
+            {productData.title}
+          </Card.Title>
           <Card.Text className="text-success" style={{ fontSize: "14px" }}>
             ${productData.price}
           </Card.Text>
 
           <div className="d-flex gap-2 mt-auto">
-            <ModalPers productData={productData}/>
-            {isAuthenticated ? (
-              <Button
-                variant={isFavorito(productData.id) ? "danger" : "outline-danger"}
-                onClick={() => toggleFavorito(productData)}
-              >
-                {isFavorito(productData.id) ? <FaHeart /> : <FaRegHeart />}
-              </Button>
-            ) : (
-              <Button
-                variant="outline-danger"
-                onClick={() => navigate('/login')}
-              >
-                <FaHeart />
-              </Button>
-            )}
+            <ModalPers productData={productData} />
+            <LikeButton productData={productData} />
           </div>
         </Card.Body>
       </Card>
-      
     </>
   );
 };
