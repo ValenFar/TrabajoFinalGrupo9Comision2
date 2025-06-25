@@ -1,4 +1,3 @@
-import React from "react";
 import { motion } from "framer-motion";
 import useFavs from "../hooks/useFavs";
 import ProductCard from "../components/ProductCard";

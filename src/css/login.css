@@ -1,0 +1,23 @@
+.button-login {
+  background: linear-gradient(120deg, #75aaee 30%, #2c549c 100%);
+  border: none;
+  transition: 0.3s ease;
+}
+
+.button-login:hover {
+  transform: translateY(-2px);
+}
+
+.button-invitado{
+  background: linear-gradient(320deg, #55d1c9 0%, #1b7d66 100%);
+  border: none;
+  transition: 0.3s ease;
+}
+
+.button-invitado:hover {
+  transform: translateY(2px);
+}
+
+.bg-login {
+  background-color: #73a1d9;
+} 
