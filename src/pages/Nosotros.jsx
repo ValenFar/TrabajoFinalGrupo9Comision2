@@ -8,23 +8,23 @@ const Nosotros = () => {
         Sobre nosotros
       </h1>
 
-<div className="d-flex justify-content-center align-items-center gap-4 mb-4">
-    <Image
-        src="/ShoppiNineLogo.png"
-        alt="Logo ShoppiNine"
-        fluid
-        className="animate__animated animate__zoomIn animate__slow"
-        style={{ maxHeight: "220px" }}
-    />
-    <Image
-        src={iconG9}
-        alt="Logo Grupo 9"
-        fluid
-        rounded
-        className="animate__animated animate__pulse animate__infinite"
-        style={{ maxHeight: '160px' }}
-    />
-</div>
+      <div className="d-flex justify-content-center align-items-center gap-4 mb-4">
+        <Image
+          src="/ShoppiNineLogo.png"
+          alt="Logo ShoppiNine"
+          fluid
+          className="animate__animated animate__zoomIn animate__slow"
+          style={{ maxHeight: "220px" }}
+        />
+        <Image
+          src={iconG9}
+          alt="Logo Grupo 9"
+          fluid
+          rounded
+          className="animate__animated animate__pulse animate__infinite"
+          style={{ maxHeight: "160px" }}
+        />
+      </div>
 
       <p className="text-center mx-auto" style={{ maxWidth: "700px" }}>
         Somos un equipo de estudiantes apasionados por la tecnología, la
@@ -51,121 +51,26 @@ const Nosotros = () => {
       </h3>
 
       <Row xs={1} md={2} lg={4} className="g-4">
-        {/* Valentín Farfán */}
-        <Col>
-          <Card className="text-center h-100 shadow-sm border-0 animate__animated animate__fadeInUp">
-            <Card.Body className="d-flex flex-column justify-content-between">
-              <div>
-                <Card.Title>Valentín Farfán</Card.Title>
-                <Card.Text>Desarrollador</Card.Text>
-              </div>
-              <div className="d-grid gap-2">
-                <Button
-                  variant="outline-primary"
-                  href="mailto:maxy.far@gmail.com"
-                  className="mt-3"
-                >
-                  Correo de contacto
-                </Button>
-                <Button
-                  variant="dark"
-                  href="https://www.github.com/ValenFar"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Perfil de GitHub
-                </Button>
-              </div>
-            </Card.Body>
-          </Card>
-        </Col>
-
-        {/* Jorge Marino */}
-        <Col>
-          <Card className="text-center h-100 shadow-sm border-0 animate__animated animate__fadeInUp">
-            <Card.Body className="d-flex flex-column justify-content-between">
-              <div>
-                <Card.Title>Jorge Marino</Card.Title>
-                <Card.Text>Desarrollador</Card.Text>
-              </div>
-              <div className="d-grid gap-2">
-                <Button
-                  variant="outline-primary"
-                  href="mailto:mjorgeluis785@gmail.com"
-                  className="mt-3"
-                >
-                  Correo de contacto
-                </Button>
-                <Button
-                  variant="dark"
-                  href="https://www.github.com/MarinoJorgeLuis"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Perfil de GitHub
-                </Button>
-              </div>
-            </Card.Body>
-          </Card>
-        </Col>
-
-        {/* Elías Tolaba */}
-        <Col>
-          <Card className="text-center h-100 shadow-sm border-0 animate__animated animate__fadeInUp">
-            <Card.Body className="d-flex flex-column justify-content-between">
-              <div>
-                <Card.Title>Elías Tolaba</Card.Title>
-                <Card.Text>Desarrollador</Card.Text>
-              </div>
-              <div className="d-grid gap-2">
-                <Button
-                  variant="outline-primary"
-                  href="mailto:eliastoladm@gmail.com"
-                  className="mt-3"
-                >
-                  Correo de contacto
-                </Button>
-                <Button
-                  variant="dark"
-                  href="https://www.github.com/ElirUu"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Perfil de GitHub
-                </Button>
-              </div>
-            </Card.Body>
-          </Card>
-        </Col>
-
-        {/* Lucas Zerpa */}
-        <Col>
-          <Card className="text-center h-100 shadow-sm border-0 animate__animated animate__fadeInUp">
-            <Card.Body className="d-flex flex-column justify-content-between">
-              <div>
-                <Card.Title>Lucas Zerpa</Card.Title>
-                <Card.Text>Desarrollador</Card.Text>
-              </div>
-              <div className="d-grid gap-2">
-                <Button
-                  variant="outline-primary"
-                  href="mailto:lenkagamine268@gmail.com"
-                  className="mt-3"
-                >
-                  Correo de contacto
-                </Button>
-                <Button
-                  variant="dark"
-                  href="https://www.github.com/Lucaz991"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Perfil de GitHub
-                </Button>
-              </div>
-            </Card.Body>
-          </Card>
-        </Col>
+        <CardIntegrante
+          nombre="Valentín Farfán"
+          git="https://github.com/ValenFar"
+          correo="mailto:maxy.far@gmail.com"
+        />
+        <CardIntegrante
+          nombre="Jorge Marino"
+          git="https://www.github.com/MarinoJorgeLuis"
+          correo="mailto:mjorgeluis785@gmail.com"
+        />
+        <CardIntegrante
+          nombre="Elías Tolaba"
+          git="https://www.github.com/ElirUu"
+          correo="mailto:mailto:eliastoladm@gmail.com"
+        />
+        <CardIntegrante
+          nombre="Lucas Zerpa"
+          git="https://www.github.com/Lucaz991"
+          correo="mailto:lenkagamine268@gmail.com"
+        />
       </Row>
     </Container>
   );
