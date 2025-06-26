@@ -20,6 +20,10 @@ export const FavsProvider = ({ children }) => {
   );
 };
 
+  // funcion para limpiar favoritos
+  const clearFavoritos = () => {
+    setFavoritos([]);
+  };
 
   const isFavorito = (id) => favoritos.some((item) => item.id === id);
 
@@ -33,7 +37,7 @@ export const FavsProvider = ({ children }) => {
   },[products]) // cada vez que hay cambios en productos
 
   return (
-    <FavsContext.Provider value={{ favoritos, toggleFavorito, isFavorito }}>
+    <FavsContext.Provider value={{ favoritos, toggleFavorito, isFavorito, clearFavoritos }}>
       {children}
     </FavsContext.Provider>
   );

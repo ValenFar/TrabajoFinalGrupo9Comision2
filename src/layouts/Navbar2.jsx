@@ -4,13 +4,21 @@ import Nav from "react-bootstrap/Nav";
 import { Container, Button } from "react-bootstrap";
 import "../css/App.css";
 
+
 import useAuth from '../hooks/useAuth';
 import { FaUser } from "react-icons/fa";
 import { IoLogOut } from "react-icons/io5";
 import Overlay from '../components/Overlay.jsx'
+import useFavs from "../hooks/useFavs.jsx";
 
 const NavBar2 = () => {
   const { isAuthenticated, logout, user } = useAuth();
+  const { clearFavoritos } = useFavs();
+
+    const handleLogout = () => {
+    clearFavoritos(); // limpia los favoritos
+    logout(); // cierra la sesión
+  };
   
   return (
     <Navbar expand="md" className="navbar navbar-expand-lg bg-NavBar rounded" >
@@ -60,7 +68,7 @@ const NavBar2 = () => {
             isAuthenticated ? (
               <Nav.Link as={NavLink} to="/">
                 <Overlay mensaje="Salir de la cuenta" direction="top" >
-                  <Button variant="danger" onClick={logout}>
+                  <Button variant="danger" onClick={handleLogout}>
                     <strong>{user.username}</strong>
                     <IoLogOut style={{width: '30px', padding: '0px' ,paddingLeft: '7px', height: 'fit-content'}} />
                   </Button>
